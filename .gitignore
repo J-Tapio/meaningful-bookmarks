@@ -1,0 +1,8 @@
+#vscode
+.vscode
+#env
+.env
+#build
+build
+#frontend
+node_modules

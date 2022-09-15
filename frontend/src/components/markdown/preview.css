@@ -1,0 +1,16 @@
+
+.preview .rc-md-editor {
+  border: none;
+  border-top: 1px solid #f0f9ff;
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+
+.preview .rc-md-editor .editor-container>.section {
+  border-right: none;
+}
+
+div.custom-html-style p{
+  font-size: 1rem;
+}

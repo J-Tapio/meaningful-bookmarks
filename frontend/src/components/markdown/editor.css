@@ -1,0 +1,60 @@
+.rc-md-editor {
+  border-radius: 20px;
+}
+
+.rc-md-editor .rc-md-navigation {
+  padding: 0 16px;
+  background: #fff;
+}
+
+.rc-md-editor .rc-md-navigation .button-wrap .rmel-iconfont {
+  font-size: 1.6rem;
+  color: #000000;
+}
+
+.rc-md-editor .rc-md-navigation .button-wrap .rmel-iconfont:hover {
+  font-size: 1.6rem;
+  color: #06e7f0;
+}
+
+.rc-md-editor .editor-container>.section {
+  border-right: none;
+}
+
+.rc-md-navigation.visible {
+  background: "#fff";
+  min-height: 60px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px; 
+}
+
+textarea.section-container.input {
+  border-bottom-left-radius: 20px;
+  font-size: 16px !important;
+  //border-bottom-right-radius: 20px;
+  overflow: auto !important;
+  --scrollbar-thumb: #374151 !important;
+  --scrollbar-track: #e5e7eb !important;
+}
+
+textarea.section-container.input:focus {
+  --tw-ring-color: #06e7f0;
+}
+
+div.section-container.html-wrap {
+border: 0px;
+border-bottom-right-radius: 20px;
+}
+
+div.custom-html-style {
+  font-size: 16px !important;
+}
+
+/* What overrides the default behavior for ol, ul, menu?? Tailwind?? */
+div.custom-html-style ul {
+  list-style: inherit;
+}
+div.custom-html-style ol {
+  list-style-type: decimal;
+}
+
