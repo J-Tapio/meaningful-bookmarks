@@ -2,6 +2,12 @@
 
 ## About
 
+Personal project where I wanted to learn use of Wails and build an app where I can create notes from webpage bookmarks.
+
+[Video of app](https://ik.imagekit.io/htg3gsxgz/wails_rT-hjwe9u.webm?ik-sdk-version=javascript-1.4.3&updatedAt=1663243566877)
+
+## About - Wails
+
 This is the official Wails React-TS template.
 
 You can configure the project by editing `wails.json`. More information about the project settings can be found
