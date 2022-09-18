@@ -7,8 +7,8 @@ export namespace main {
 	    imageURL: string;
 	    note: number[];
 	    tags: string[];
-	    created_at: number;
-	    updated_at: number;
+	    createdAt: number;
+	    updatedAt: number;
 	
 	    static createFrom(source: any = {}) {
 	        return new NoteDocument(source);
@@ -22,8 +22,8 @@ export namespace main {
 	        this.imageURL = source["imageURL"];
 	        this.note = source["note"];
 	        this.tags = source["tags"];
-	        this.created_at = source["created_at"];
-	        this.updated_at = source["updated_at"];
+	        this.createdAt = source["createdAt"];
+	        this.updatedAt = source["updatedAt"];
 	    }
 	}
 

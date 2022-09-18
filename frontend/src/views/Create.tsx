@@ -15,21 +15,10 @@ import PageScreenshot from "../components/create/PageScreenshot";
 import TagInput from "../components/create/TagInput";
 import NoteTitle from "../components/create/NoteTitle";
 import UploadProgress from "../components/create/UploadProgress";
+import UrlInput from "../components/create/UrlInput";
 
 //==============================================================================
-// If clipboard package not available - error while initializing
-function UrlInput() {
-  return (
-    <div className="lg:max-w-[50%]">
-      <input
-        type="url"
-        className="form-input text-black focus:border-slate-100 rounded"
-      />
-    </div>
-  );
-}
 
-//------------------------------------------------------------------------------
 export default function Create() {
   let {
     pageURL,

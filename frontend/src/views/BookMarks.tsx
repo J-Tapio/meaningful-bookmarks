@@ -69,7 +69,7 @@ export default function BookMarks() {
               key={bookmark.id}
               noteTitle={bookmark.noteTitle}
               pageURL={bookmark.pageURL}
-              createdAt={bookmark.created_at}
+              createdAt={bookmark.createdAt}
               tags={bookmark.tags}
             />
           ))}

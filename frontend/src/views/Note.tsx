@@ -42,8 +42,8 @@ interface Note {
   imageURL: string;
   note: string | number[]; //converted to base64 when result comes back from Mongo
   tags: string[];
-  created_at: number;
-  updated_at: number;
+  createdAt: number;
+  updatedAt: number;
 }
 
 export default function Note({ note }: { note: Note }) {
@@ -78,7 +78,7 @@ export default function Note({ note }: { note: Note }) {
         </a>
       </div>
       <p className="text-md font-semibold">
-        {formatTimeStamp(note.created_at)}
+        {formatTimeStamp(note.createdAt)}
       </p>
       <div className="">
         <img

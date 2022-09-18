@@ -15,10 +15,10 @@ import (
 
 // App struct
 type App struct {
-	ctx              context.Context
-	clipboardInitErr bool
-	envLoadErr       bool
-	bookmark         BookMark
+	ctx                context.Context
+	clipboardInitErr   bool
+	envLoadErr         bool
+	bookmark           BookMark
 }
 
 // Bookmark struct - When saving a bookmark
@@ -43,7 +43,6 @@ type uploadedImageRes struct {
 
 /*
 Referencing: https://stackoverflow.com/questions/70589570/how-i-insert-a-time-date-stamp-in-mongodb-with-a-golang-sruct
-
 Using unix epoch to handle timestamps
 */
 type NoteDocument struct {
@@ -53,8 +52,8 @@ type NoteDocument struct {
 	ImageURL  string   `bson:"imageURL" json:"imageURL"`
 	Note      []byte   `bson:"note" json:"note"`
 	Tags      []string `bson:"tags" json:"tags"`
-	CreatedAt int64    `bson:"created_at" json:"created_at"`
-	UpdatedAt int64    `bson:"updated_at" json:"updated_at"`
+	CreatedAt int64    `bson:"created_at" json:"createdAt"`
+	UpdatedAt int64    `bson:"updated_at" json:"updatedAt"`
 }
 
 // NewApp creates a new App application struct
@@ -68,6 +67,7 @@ func (a *App) startup(ctx context.Context) {
 	a.ctx = ctx
 }
 
+
 func (a *App) domready(ctx context.Context) {
 	if !a.clipboardInitErr {
 		a.clipboardUrl(ctx)
@@ -75,7 +75,7 @@ func (a *App) domready(ctx context.Context) {
 		runtime.EventsEmit(ctx, "clipboard not available")
 	}
 
-	runtime.EventsOn(ctx, "bookmark", a.saveBookMark)
+	runtime.EventsOn(ctx, "bookmark", a.saveBookmark)
 }
 
 func (a *App) beforeClose(ctx context.Context) (prevent bool) {
@@ -124,7 +124,7 @@ func (a *App) clipboardUrl(ctx context.Context) {
 	}()
 }
 
-func (a *App) saveBookMark(data ...interface{}) {
+func (a *App) saveBookmark(data ...interface{}) {
 	// Only one argument is passed to the function when event emitted
 	var note NoteAndTags
 	//Convert map[string]interface {} to string
@@ -180,11 +180,12 @@ func (a *App) saveBookMark(data ...interface{}) {
 	runtime.EventsEmit(a.ctx, "Document uploaded successfully")
 	//? Better to re-initialize as empty struct of type Bookmark?
 	//? How to 're-initialize' with nil values? This seems stupid way to go?
-	a.bookmark = BookMark{imgBase64: "", PageURL: "", ImageURL: ""}
+	a.bookmark = BookMark{}
 	fmt.Println("Document uploaded successfully")
 }
 
 // Frontend go-bindings
+
 func (a *App) AllBookmarks() ([]NoteDocument, error) {
 	return db.allBookmarks(a)
 }

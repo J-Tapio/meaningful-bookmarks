@@ -9,8 +9,8 @@ type NoteDocument = {
   imageURL: string;
   note: number[] | string;
   tags: string[];
-  created_at: number;
-  updated_at: number;
+  createdAt: number;
+  updatedAt: number;
 };
 
 export type BookmarkState = {
