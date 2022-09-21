@@ -77,9 +77,7 @@ export default function Note({ note }: { note: Note }) {
           {hostNameFromURL(note.pageURL)}
         </a>
       </div>
-      <p className="text-md font-semibold">
-        {formatTimeStamp(note.createdAt)}
-      </p>
+      <p className="text-md font-semibold">{formatTimeStamp(note.createdAt)}</p>
       <div className="">
         <img
           src={note.imageURL}
@@ -88,15 +86,15 @@ export default function Note({ note }: { note: Note }) {
         />
         {note && <NotePreview note={atob(noteBase64)} />}
       </div>
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            setSelectedBookmark(null);
-          }}
-          className="rounded-bl-xl rounded-tr-xl p-4 dark:text-white font-semibold bg-slate-300 hover:bg-slate-500 dark:bg-[#06e7f0] dark:hover:bg-[#04b5bd] ease-in-out duration-200"
-        >
-          Go Back
-        </button>
+      <button
+        onClick={(e) => {
+          e.preventDefault();
+          setSelectedBookmark(null);
+        }}
+        className="rounded-bl-xl rounded-tr-xl p-4 dark:text-white font-semibold bg-[#06e7f0] hover:bg-[#04b5bd] dark:bg-[#06e7f0] dark:hover:bg-[#04b5bd] ease-in-out duration-200"
+      >
+        Go Back
+      </button>
     </div>
   );
 }

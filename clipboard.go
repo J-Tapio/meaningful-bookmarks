@@ -14,6 +14,8 @@ func InitClipboard(a *App) {
 		a.clipboardInitErr = true
 	} else {
 		a.clipboardInitErr = false
+		// When app starts, there should not be any url in clipboard
+		clipboard.Write(clipboard.FmtText, []byte(""))
 		fmt.Printf("Clipboard available for use")
 	}
 }
