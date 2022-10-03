@@ -2,7 +2,7 @@
 
 ## About
 
-Personal project where I wanted to learn use of Wails and build an app where I can create notes from webpage bookmarks.
+Project where I wanted to learn use of Wails and build an app where I can create notes from webpage bookmarks.
 
 [Video of app](https://ik.imagekit.io/htg3gsxgz/wails_rT-hjwe9u.webm?ik-sdk-version=javascript-1.4.3&updatedAt=1663243566877)
 
